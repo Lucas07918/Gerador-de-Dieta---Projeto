@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/dieta.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>Salvo</title>
+</head>
+<body id="bodyid" class="body-light">
+    <script>
+        const storageKey = 'siteMode';
+        const storedMode = localStorage.getItem(storageKey);
+        console.log(storedMode)
+        if(storedMode == 'body-light'){
+            const body = document.getElementById('bodyid')
+            body.classList.add('body-light')
+        }
+        else{
+            const body = document.getElementById('bodyid')
+            body.classList.add('body-dark')
+        }
+    </script>
+    <div id="header">
+        <form action="/salvar">
+            <button id="gerarNovamente">Salvar</button>
+        </form>
+        {% if calorias %}
+            <div>
+                <h3>Calorias por dia:</h3>
+                <h1>{{calorias}}kcal</h1>
+            </div>
+            <div>
+                <h3>Tempo estimado:</h3>
+                <h1>{{tempo}} Semanas</h1>
+            </div>
+        {% endif %}
+        <form action="/gerarTodos">
+            <button id="gerarNovamente">Gerar Novamente</button>
+        </form>
+    </div>
+    <div id="container">
+        <div class="content">
+            <div id="refeicao">
+                <h2>Café da Manhã</h2>
+            </div>
+            <div class="table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Porção</th>
+                            <th>kcal</th>
+                        </tr>
+                    </thead>
+                    {% if cafe %}
+                    {% for c in cafe %}
+                    <tbody>
+                        <tr>
+                            <td>{{c['descricao']}}</td>
+                            <td>{{ c['quantidade'] }}</td>
+                            <td>{{ c['calorias'] }}</td>
+                        </tr>
+                    </tbody>
+                    {% endfor %}
+                    {% else %}
+                    <h2>Não existe comidas cadastradas</h2>
+                    {% endif %}
+                </table>
+            </div>
+            <form action="/gerarCafe">
+                <button class="button-gerar">Gerar Novamente</button>
+            </form>
+        </div>
+        <div class="content">
+            <div id="refeicao">
+                <h2>Almoço</h2>
+            </div>
+            <div class="table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Porção</th>
+                            <th>kcal</th>
+                        </tr>
+                    </thead>
+                    {% if almoco %}
+                    {% for c in almoco %}
+                    <tbody>
+                        <tr>
+                            <td>{{c['descricao']}}</td>
+                            <td>{{ c['quantidade'] }}</td>
+                            <td>{{ c['calorias'] }}</td>
+                        </tr>
+                    </tbody>
+                    {% endfor %}
+                    {% else %}
+                    <h2>Não existe comidas cadastradas</h2>
+                    {% endif %}
+                </table>
+            </div>
+            <form action="/gerarCafe">
+                <button class="button-gerar">Gerar Novamente</button>
+            </form>
+        </div>
+        <div class="content">
+            <div id="refeicao">
+                <h2>Jantar</h2>
+            </div>
+            <div class="table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Porção</th>
+                            <th>kcal</th>
+                        </tr>
+                    </thead>
+                    {% if jantar %}
+                    {% for c in jantar %}
+                    <tbody>
+                        <tr>
+                            <td>{{c['descricao']}}</td>
+                            <td>{{ c['quantidade'] }}</td>
+                            <td>{{ c['calorias'] }}</td>
+                        </tr>
+                    </tbody>
+                    {% endfor %}
+                    {% else %}
+                    <h2>Não existe comidas cadastradas</h2>
+                    {% endif %}
+                </table>
+            </div>
+            <form action="/gerarCafe">
+                <button class="button-gerar">Gerar Novamente</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

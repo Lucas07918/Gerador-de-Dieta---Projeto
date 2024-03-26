@@ -1,0 +1,125 @@
+[
+    {
+        "descricao": "Pão",
+        "conjuntos": [
+            {
+                "calorias": "508",
+                "item": [
+                    {
+                        "conjunto":[
+                            {
+                                "descricao": "Pão Integral",
+                                "quantidade": "2 fatias (100 g)",
+                                "calorias": "247 kcal"
+                            },
+                            {
+                                "descricao": "Mortadela",
+                                "quantidade": "1 fatia fina (15 g)",
+                                "calorias": "50 kcal"
+                            },
+                            {
+                                "descricao": "Ovo Frito",
+                                "quantidade": "1 unidade(50 g)",
+                                "calorias": "107 kcal"
+                            },
+                            {
+                                "descricao": "Vitamina de Banana",
+                                "quantidade": "1 porção(100 ml)",
+                                "calorias": "104 kcal"
+                            }
+                        ]
+                    }
+
+                ]
+            },
+            {
+                "calorias": "406",
+                "item": [
+                    {
+                        "conjunto":[
+                            {
+                                "descricao": "Pão Francês",
+                                "quantidade": "1 unidade(50 g)",
+                                "calorias": "140 kcal"
+                            },
+                            {
+                                "descricao": "Ovo Frito",
+                                "quantidade": "1 unidade(50 g)",
+                                "calorias": "107 kcal"
+                            },
+                            {
+                                "descricao": "Iogurte Gelado",
+                                "quantidade": "1 porção(100 g)",
+                                "calorias": "159 kcal"
+                            }
+                        ]
+                    }
+
+                ]
+            },
+            {
+                "calorias": "247",
+                "item": [
+                    {
+                        "conjunto":[
+                            {
+                                "descricao": "Pão Francês",
+                                "quantidade": "1 unidade(50 g)",
+                                "calorias": "140 kcal"
+                            },
+                            {
+                                "descricao": "Ovo Frito",
+                                "quantidade": "1 unidade(50 g)",
+                                "calorias": "107 kcal"
+                            }
+                        ]
+                    }
+
+                ]
+            }
+        ]
+    },
+    {
+        "descricao": "Frutas",
+        "conjuntos": [
+            {
+                "calorias": "192",
+                "item": [
+                    {
+                        "conjunto":[
+                            {
+                                "descricao": "Maçã",
+                                "quantidade": "1 porção(170 g)",
+                                "calorias": "81 kcal"
+                            },
+                            {
+                                "descricao": "Banana",
+                                "quantidade": "1 banana (125 g)",
+                                "calorias": "111 kcal"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "calorias": "192",
+                "item": [
+                    {
+                        "conjunto":[
+                            {
+                                "descricao": "Brócolis",
+                                "quantidade": "1 porção(170 g)",
+                                "calorias": "81 kcal"
+                            },
+                            {
+                                "descricao": "Beterraba",
+                                "quantidade": "1 banana (125 g)",
+                                "calorias": "111 kcal"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]

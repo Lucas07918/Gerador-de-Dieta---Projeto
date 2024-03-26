@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/dieta.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/ea2014f2b9.js" crossorigin="anonymous"></script>    <title>Dieta</title>
+</head>
+<body id="bodyid" class="body-light">
+    <script>
+        const storageKey = 'siteMode';
+        const storedMode = localStorage.getItem(storageKey);
+        console.log(storedMode)
+        if(storedMode == 'body-light'){
+            const body = document.getElementById('bodyid')
+            body.classList.add('body-light')
+        }
+        else{
+            const body = document.getElementById('bodyid')
+            body.classList.add('body-dark')
+        }
+
+        function clicarCafe(){
+            const card = document.getElementById('cafeid');
+            card.classList.toggle('expanded');
+            const table = document.getElementById('cafeTable');
+            table.classList.toggle('table-expanded');
+
+            const cardAlmoco = document.getElementById('almocoid');
+            cardAlmoco.classList.toggle('retrair');
+            const tableAlmoco = document.getElementById('almocoTable');
+            tableAlmoco.classList.toggle('table-retrair');
+
+            const cardJantar = document.getElementById('jantarid');
+            cardAlmoco.classList.toggle('retrair');
+            const tableJantar = document.getElementById('jantarTable');
+            tableJantar.classList.toggle('table-retrair');
+        }
+
+        function clicarAlmoco(){
+            const card = document.getElementById('almocoid');
+            card.classList.toggle('expanded');
+            const table = document.getElementById('almocoTable');
+            table.classList.toggle('table-expanded');
+
+            const cardAlmoco = document.getElementById('cafeid');
+            cardAlmoco.classList.toggle('retrair');
+            const tableAlmoco = document.getElementById('cafeTable');
+            tableAlmoco.classList.toggle('table-retrair');
+
+            const cardJantar = document.getElementById('jantarid');
+            cardAlmoco.classList.toggle('retrair');
+            const tableJantar = document.getElementById('jantarTable');
+            tableJantar.classList.toggle('table-retrair');
+        }
+
+        function clicarJanta(){
+            const card = document.getElementById('jantarid');
+            card.classList.toggle('expanded');
+            const table = document.getElementById('jantarTable');
+            table.classList.toggle('table-expanded');
+
+            const cardAlmoco = document.getElementById('almocoid');
+            cardAlmoco.classList.toggle('retrair');
+            const tableAlmoco = document.getElementById('almocoTable');
+            tableAlmoco.classList.toggle('table-retrair');
+
+            const cardJantar = document.getElementById('cafeid');
+            cardAlmoco.classList.toggle('retrair');
+            const tableJantar = document.getElementById('cafeTable');
+            tableJantar.classList.toggle('table-retrair');
+        }
+
+        function expandir(){
+            const expand = document.getElementById('navbar');
+            if(expand.classList == 'navbar-fechada'){
+            expand.classList.remove('navbar-fechada')
+            expand.classList.add('navbar-aberta')
+            console.log("!!!!111")
+        }else{
+            expand.classList.remove('navbar-aberta')
+            expand.classList.add('navbar-fechada')
+            console.log("!!!!222")
+        }
+        }
+    </script>
+    <div id="header">
+        <form action="/salvar">
+            <button id="gerarNovamente">Salvar</button>
+        </form>
+        {% if calorias %}
+            <div>
+                <h3>Calorias por dia:</h3>
+                <h1>{{calorias}}kcal</h1>
+            </div>
+            <div>
+                <h3>Tempo estimado:</h3>
+                <h1>{{tempo}} Semanas</h1>
+            </div>
+        {% endif %}
+        <form action="/gerarTodos">
+            <button id="gerarNovamente">Gerar Novamente</button>
+        </form>
+    </div>
+    <div class="navbar-fechada" id="navbar">
+        <h1 onclick="expandir()"><i class="fa-solid fa-caret-down" style="color: #808080;"></i>
+        </h1>
+        <form action="/gerarTodos">
+            <button id="salvarPorcent">Salvar</button>
+        </form>
+        <div id="porcent">
+            <div class="wrapper">
+                <span class="minus1">-</span>
+                <div class="numero-porcent">
+                    <span id="cafeNum" class="num1">40</span>
+                    <span>%</span>
+                </div>
+                <span class="plus1">+</span>
+            </div>
+            <div class="wrapper">
+                <span class="minus2">-</span>
+                <div class="numero-porcent">
+                    <span id="almocoNum" class="num2">20</span>
+                    <span>%</span>
+                </div>
+                <span class="plus2">+</span>
+            </div>
+            <div class="wrapper">
+                <span class="minus3">-</span>
+                <div class="numero-porcent">
+                    <span id="jantarNum" class="num3">40</span>
+                    <span>%</span>
+                </div>
+                <span class="plus3">+</span>
+            </div>
+        </div>
+    </div>
+    <!-- !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!111 -->
+    <div id="container" >
+        <div class="content" id="cafeid" onclick="clicarCafe()">
+            <div id="refeicao">
+                <h2>Café da Manhã</h2>
+            </div>
+            <div class="table" id="cafeTable">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Porção</th>
+                            <th>kcal</th>
+                        </tr>
+                    </thead>
+                    {% if cafe %}
+                    {% for c in cafe %}
+                    <tbody>
+                        <tr>
+                            <td>{{c['descricao']}}</td>
+                            <td>{{ c['quantidade'] }}</td>
+                            <td>{{ c['calorias'] }}</td>
+                        </tr>
+                    </tbody>
+                    {% endfor %}
+                    {% else %}
+                    <h2>Não existe cafe cadastradas</h2>
+                    {% endif %}
+                </table>
+            </div>
+            <form action="/gerarCafe">
+                <button class="button-gerar">Gerar Novamente</button>
+            </form>
+        </div>
+        <div class="content" id="almocoid" onclick="clicarAlmoco()">
+            <div id="refeicao">
+                <h2>Almoço</h2>
+            </div>
+            <div class="table" id="almocoTable">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Porção</th>
+                            <th>kcal</th>
+                        </tr>
+                    </thead>
+                    {% if almoco %}
+                    {% for c in almoco %}
+                    <tbody>
+                        <tr>
+                            <td>{{c['descricao']}}</td>
+                            <td>{{ c['quantidade'] }}</td>
+                            <td>{{ c['calorias'] }}</td>
+                        </tr>
+                    </tbody>
+                    {% endfor %}
+                    {% else %}
+                    <h2>Não existe cafe cadastradas</h2>
+                    {% endif %}
+                </table>
+            </div>
+            <form action="/gerarAlmoco">
+                <button class="button-gerar">Gerar Novamente</button>
+            </form>
+        </div>
+        <div class="content" id="jantarid" onclick="clicarJanta()">
+            <div id="refeicao">
+                <h2>Jantar</h2>
+            </div>
+            <div class="table" id="jantarTable">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Porção</th>
+                            <th>kcal</th>
+                        </tr>
+                    </thead>
+                    {% if jantar %}
+                    {% for c in jantar %}
+                    <tbody>
+                        <tr>
+                            <td>{{c['descricao']}}</td>
+                            <td>{{ c['quantidade'] }}</td>
+                            <td>{{ c['calorias'] }}</td>
+                        </tr>
+                    </tbody>
+                    {% endfor %}
+                    {% else %}
+                    <h2>Não existe cafe cadastradas</h2>
+                    {% endif %}
+                </table>
+            </div>
+            <form action="/gerarJantar">
+                <button class="button-gerar">Gerar Novamente</button>
+            </form>
+        </div>
+    </div>
+    <script>
+        cafeNum = parseInt(document.getElementById("cafeNum").innerHTML)
+        almocoNum = parseInt(document.getElementById("almocoNum").innerHTML)
+        jantarNum = parseInt(document.getElementById("jantarNum").innerHTML)
+
+        const plus1 = document.querySelector(".plus1"),
+        minus1 = document.querySelector(".minus1"),
+        num1 = document.querySelector(".num1"),
+        plus2 = document.querySelector(".plus2"),
+        minus2 = document.querySelector(".minus2"),
+        num2 = document.querySelector(".num2"),
+        plus3 = document.querySelector(".plus3"),
+        minus3 = document.querySelector(".minus3"),
+        num3 = document.querySelector(".num3")
+
+
+        let a = cafeNum;
+        let b = almocoNum;
+        let c = jantarNum;
+
+        plus1.addEventListener("click", ()=>{
+            a++
+            a = (a < 10) ? "0" + a : a;
+            num1.innerText = a;
+        });
+
+        minus1.addEventListener("click", ()=>{
+            if(a > 0){
+                a--
+                a = (a < 10) ? "0" + a : a;
+                num1.innerText = a;
+            }
+        });
+
+        plus2.addEventListener("click", ()=>{
+            b++
+            b = (b < 10) ? "0" + b : b;
+            num2.innerText = b;
+        });
+
+        minus2.addEventListener("click", ()=>{
+            if(b > 0){
+                b--
+                b = (b < 10) ? "0" + b : b;
+                num2.innerText = b;
+            }
+        });
+
+        plus3.addEventListener("click", ()=>{
+            c++
+            c = (c < 10) ? "0" + c : c;
+            num3.innerText = c;
+        });
+
+        minus3.addEventListener("click", ()=>{
+            if(c > 0){
+                c--
+                c = (c < 10) ? "0" + c : c;
+                num3.innerText = c;
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+[
+    {
+        "id": {
+            "timestamp": 1594720387,
+            "date": "2020-07-14T09:53:07.000+00:00"
+        },
+        "descricao": "Rolo de carne",
+        "quantidade": "1 fatia\u00a0(250 g)",
+        "calorias": "223 kcal"
+    },
+    {
+        "id": {
+            "timestamp": 1594720817,
+            "date": "2020-07-14T10:00:17.000+00:00"
+        },
+        "descricao": "Frango assado",
+        "quantidade": "1 peito\u00a0(172 g)",
+        "calorias": "282 kcal"
+    },
+    {
+        "id": {
+            "timestamp": 1594720580,
+            "date": "2020-07-14T09:56:20.000+00:00"
+        },
+        "descricao": "Vinagre de ma\u00e7\u00e3",
+        "quantidade": "1 colher de sopa\u00a0(14.9 g)",
+        "calorias": "3 kcal"
+    }
+]

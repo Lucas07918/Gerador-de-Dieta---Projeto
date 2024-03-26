@@ -1,0 +1,140 @@
+[
+    {
+        "descricao": "Carne",
+        "conjuntos": [
+            {
+                "calorias": "846",
+                "item": [
+                    {
+                        "conjunto":[
+                            {
+                                "descricao": "Bife",
+                                "quantidade": "1 unidade (100 g)",
+                                "calorias": "271 kcal"
+                            },
+                            {
+                                "descricao": "Arroz",
+                                "quantidade": "2 porções (100 g)",
+                                "calorias": "260 kcal"
+                            },
+                            {
+                                "descricao": "feijão",
+                                "quantidade": "1 porção(60 g)",
+                                "calorias": "205 kcal"
+                            },
+                            {
+                                "descricao": "Suco de Laranja Natural",
+                                "quantidade": "1 porção(110 ml)",
+                                "calorias": "110 kcal"
+                            }
+                        ]
+                    }
+
+                ]
+            },
+            {
+                "calorias": "492",
+                "item": [
+                    {
+                        "conjunto":[
+                            {
+                                "descricao": "Ovo Frito",
+                                "quantidade": "1 unidade(50 g)",
+                                "calorias": "107 kcal"
+                            },
+                            {
+                                "descricao": "Arroz",
+                                "quantidade": "2 porções (100 g)",
+                                "calorias": "260 kcal"
+                            },
+                            {
+                                "descricao": "Alface",
+                                "quantidade": "1 porção (100 g)",
+                                "calorias": "15 kcal"
+                            },
+                            {
+                                "descricao": "Suco de Laranja Natural",
+                                "quantidade": "1 porção(110 ml)",
+                                "calorias": "110 kcal"
+                            }
+                        ]
+                    }
+
+                ]
+            },
+            {
+                "calorias": "493",
+                "item": [
+                    {
+                        "conjunto":[
+                            {
+                                "descricao": "Espetinho de Carne",
+                                "quantidade": "2 unidade(100 g)",
+                                "calorias": "360 kcal"
+                            },
+                            {
+                                "descricao": "Cerveja",
+                                "quantidade": "1 unidade(330 ml)",
+                                "calorias": "133 kcal"
+                            }
+                        ]
+                    }
+
+                ]
+            }
+        ]
+    },
+    {
+        "descricao": "Frango",
+        "conjuntos": [
+            {
+                "calorias": "512",
+                "item": [
+                    {
+                        "conjunto":[
+                            {
+                                "descricao": "Asinha de frango",
+                                "quantidade": "2 porções (100 g)",
+                                "calorias": "368 kcal"
+                            },
+                            {
+                                "descricao": "Arroz",
+                                "quantidade": "2 porções (100 g)",
+                                "calorias": "260 kcal"
+                            },
+                            {
+                                "descricao": "Cerveja",
+                                "quantidade": "1 unidade(330 ml)",
+                                "calorias": "133 kcal"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "calorias": "609",
+                "item": [
+                    {
+                        "conjunto":[
+                            {
+                                "descricao": "Filé de Frango",
+                                "quantidade": "1 porção(100 g)",
+                                "calorias": "239 kcal"
+                            },
+                            {
+                                "descricao": "Arroz",
+                                "quantidade": "2 porções (100 g)",
+                                "calorias": "260 kcal"
+                            },
+                            {
+                                "descricao": "Suco de Laranja Natural",
+                                "quantidade": "1 porção(110 ml)",
+                                "calorias": "110 kcal"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]
